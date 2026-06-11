@@ -1,114 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-<title>TeamRohitOfficial45 Live</title>
-
-<style>
-body {
-    margin: 0;
-    font-family: 'Poppins', Arial, sans-serif;
-    background: radial-gradient(circle at top, #111 0%, #000 70%);
-    color: gold;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-}
-
-.loading-message {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    padding: 12px 25px;
-    border-radius: 12px;
-    color: #FFD700;
-    background: rgba(255, 215, 0, 0.08);
-    border: 1px solid rgba(255, 215, 0, 0.4);
-    box-shadow: 0 0 15px #FFD700, 0 0 30px #FFD700;
-    animation: pulse 1.6s infinite alternate;
-}
-
-@keyframes pulse {
-    from { box-shadow: 0 0 10px #FFD700; }
-    to { box-shadow: 0 0 30px #FFD700; }
-}
-
-.player-container {
-    width: 95%;
-    max-width: 1200px;
-    margin: 20px auto;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 0 40px rgba(255, 215, 0, 0.4);
-    background: #000;
-}
-
-.player-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-.join-telegram-container {
-    margin-top: 25px;
-}
-
-.join-telegram-btn {
-    padding: 14px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #000;
-    background: linear-gradient(135deg, #FFD700, #ffae00);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
-    transition: 0.3s ease;
-}
-
-.join-telegram-btn:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 35px gold;
-}
-
-@media (max-width: 600px) {
-    .loading-message {
-        font-size: 16px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<div class="loading-message">
-    ⭐ Share This Link With Your Friends ⭐
-</div>
-
-<div class="player-container">
-    <div style="padding:56.25% 0 0 0; position:relative;">
-        <iframe 
-            src="https://cricketstan.github.io/Allrounder-/prame"
-            allow="fullscreen; encrypted-media; picture-in-picture"
-            allowfullscreen
-            webkitallowfullscreen
-            mozallowfullscreen
-            playsinline
-            style="position:absolute; top:0; left:0; width:100%; height:100%;">
-        </iframe>
-    </div>
-</div>
-
-<div class="join-telegram-container">
-    <button class="join-telegram-btn"
-        onclick="window.open('https://t.me/+lkbpBqFd0FljNzJl','_blank')">
-        🔥 Join Telegram Channel
-    </button>
-</div>
-
-</body>
+<!DOCTYPE html>  
+<html>  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>TEAMROHITOFFICIAL45</title>     
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/shaka-player.ui.min.js" crossorigin="anonymous"></script>  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/controls.min.css" crossorigin="anonymous">  
+  <style>  
+   * { margin: 0; padding: 0; box-sizing: border-box; }  
+    html, body {  
+      background: #000;  
+      height: 100vh;  
+      width: 100vw;  
+      overflow: hidden;  
+      font-family: system-ui, -apple-system, sans-serif;  
+    }  
+    .shaka-video-container {  
+      position: absolute;  
+      inset: 0;  
+      width: 100%;  
+      height: 100%;  
+    }  
+    video {  
+      width: 100%;  
+      height: 100%;  
+      background: #000;  
+      object-fit: contain;  
+    }  
+    .shaka-spinner-container,  
+    .shaka-spinner,  
+    .shaka-spinner-svg {  
+      display: none !important;  
+      visibility: hidden !important;  
+      opacity: 0 !important;  
+    }  
+  </style>  
+</head>  
+<body>  
+  <div class="shaka-video-container" data-shaka-player>  
+    <video autoplay playsinline preload="metadata" poster="https://i.ibb.co/wFHDvqJw/IMG-20260110-185911-709.jpg"></video>  
+  </div>  
+  
+  <script>  
+    document.addEventListener('DOMContentLoaded', async () => {  
+      shaka.polyfill.installAll();  
+  
+      if (!shaka.Player.isBrowserSupported()) {  
+        console.error('Browser not supported');  
+        return;  
+      }  
+  
+      const video = document.querySelector('video');  
+      const player = new shaka.Player();  
+      await player.attach(video);  
+  
+      const container = document.querySelector('.shaka-video-container');  
+      const ui = new shaka.ui.Overlay(player, container, video);  
+  
+      ui.configure({  
+        controlPanelElements: [  
+          'play_pause', 'time_and_duration', 'mute', 'volume',  
+          'spacer', 'language', 'captions', 'picture_in_picture',  
+          'quality', 'fullscreen'  
+        ],  
+        volumeBarColors: {  
+          base: 'rgba(255, 192, 203, 0.3)',  
+          level: 'rgb(255, 105, 180)'  
+        },  
+        seekBarColors: {  
+          base: 'rgba(255, 255, 0, 0.3)',  
+          buffered: 'rgba(255, 255, 0, 0.6)',  
+          played: 'rgb(255, 255, 0)'  
+        }  
+      });  
+  
+      // ✅ Your DRM Key + MPD URL  
+      let drmConfig = {  
+        clearKeys: {  
+          "5be21df3f18ef64aaaaa30cbdaf128ed": "7fac12f58b756a1a52d3150c7d3b0304"  
+        }  
+      };  
+  
+      let streamUrl = "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/ehfibbt64r/out/v1/242699d5a0484c3b8868d40d763d75cd/cenc.mpd";  
+  
+      player.configure({  
+        drm: drmConfig,  
+        streaming: {  
+          lowLatencyMode: true,  
+          bufferingGoal: 15,  
+          rebufferingGoal: 2,  
+          bufferBehind: 15,  
+          retryParameters: {  
+            timeout: 10000,  
+            maxAttempts: 5,  
+            baseDelay: 300,  
+            backoffFactor: 1.2  
+          },  
+          segmentRequestTimeout: 8000,  
+          segmentPrefetchLimit: 2,  
+          useNativeHlsOnSafari: true  
+        },  
+        manifest: {  
+          retryParameters: {  
+            timeout: 8000,  
+            maxAttempts: 3  
+          }  
+        }  
+      });  
+  
+      player.addEventListener('error', (event) => {  
+        console.error('Shaka Player Error:', event.detail);  
+      });  
+  
+      try {  
+        await player.load(streamUrl);  
+        console.log("Stream loaded successfully");  
+      } catch (error) {  
+        console.error('Load error:', error);  
+      }  
+    });  
+  </script>  
+</body>  
 </html>
